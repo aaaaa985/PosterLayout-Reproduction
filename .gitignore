@@ -205,3 +205,35 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+### --- Deep Learning Specific --- ###
+# 忽略权重文件 (PyTorch & Jittor)
+*.pth
+*.pt
+*.jtp
+*.ckpt
+model_weight/
+
+# 忽略数据集 (PosterLLaVa 数据集非常大，严禁上传)
+data/
+datasets/downloaded/
+*.json
+
+# 忽略训练输出和推理结果
+output/
+train_result/
+training_plot/
+result_plot/
+*.png
+*.jpg
+*.jpeg
+!assets/*.png  # 如果你在 README 里用了 assets 文件夹里的图片，不要忽略它
+
+# 忽略日志文件
+*.log
+events.out.tfevents.*
+
+### --- IDE & System --- ###
+.vscode/
+.idea/
+.DS_Store
