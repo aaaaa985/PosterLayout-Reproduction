@@ -1,0 +1,20 @@
+# 核心深度学习框架 (建议版本以确保兼容性)
+torch>=1.10.0
+torchvision>=0.11.0
+
+# 骨干网络模型库 (model.py 中用于创建 ResNet)
+timm>=0.6.0
+
+# 基础数学与科学计算
+numpy>=1.19.0
+# 用于 RecLoss.py 中的匈牙利匹配算法 (linear_sum_assignment)
+scipy>=1.5.0
+
+# 图像处理与计算机视觉
+Pillow>=8.0.0
+# 用于 eval.py 中的 Sobel 算子与图像转换
+# 建议在服务器/AutoDL环境使用 headless 版本以避免 libGL 报错
+opencv-python-headless>=4.5.0
+
+# 绘图与可视化 (main.py 和 eval.py 绘图)
+matplotlib>=3.3.0
