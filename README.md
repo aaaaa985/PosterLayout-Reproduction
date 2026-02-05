@@ -1,4 +1,3 @@
-<div align="center">
 <h1 align="center">PosterLayout Reproduction (PyTorch & Jittor)</h1>
 
 <p align="center">
@@ -16,6 +15,8 @@
   <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Hsu_PosterLayout_A_New_Benchmark_and_Approach_for_Content-Aware_Automatic_Poster_CVPR_2023_paper.pdf"><img src="https://img.shields.io/badge/Paper-CVPR%202023-brightgreen" alt="Paper"></a>
   <a href="https://github.com/PKU-Venzu/PosterLayout"><img src="https://img.shields.io/badge/Official-Repo-lightgrey?logo=github" alt="Official Repo"></a>
 </p>
+
+---
 
 ## English
 
@@ -35,7 +36,7 @@ The PosterLayout model, also known as **DS-GAN** (Design Sequence GAN), is a con
 - **Optimization**: The model is supervised by a combination of reconstruction loss ($L_{rec}$: NLL + L1 + GIoU) and adversarial loss ($L_{adv}$: Hinge loss).
 
 <p align="center">
-  <img src="./assets/framework.png" width="100%" />
+  <img src="./assets/framework.png" width="80%" />
   <br>
   <em>Figure: Overview of the DS-GAN architecture.</em>
 </p>
@@ -209,7 +210,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
 - **损失函数**：结合了重构损失 ($L_{rec}$，包含分类 NLL、位置 L1 及 GIoU 损失) 与对抗损失 ($L_{adv}$，采用 Hinge Loss)。
 
 <p align="center">
-  <img src="./assets/framework.png" width="100%" />
+  <img src="./assets/framework.png" width="80%" />
   <br>
   <em>图：DS-GAN 架构概览</em>
 </p>
@@ -365,4 +366,5 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 }
 
 ```
+
 
