@@ -16,7 +16,7 @@
   <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Hsu_PosterLayout_A_New_Benchmark_and_Approach_for_Content-Aware_Automatic_Poster_CVPR_2023_paper.pdf"><img src="https://img.shields.io/badge/Paper-CVPR%202023-brightgreen" alt="Paper"></a>
   <a href="https://github.com/PKU-Venzu/PosterLayout"><img src="https://img.shields.io/badge/Official-Repo-lightgrey?logo=github" alt="Official Repo"></a>
 </p>
-------
+---
 
 ## English
 
@@ -364,4 +364,5 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2023}
 }
+
 ```
