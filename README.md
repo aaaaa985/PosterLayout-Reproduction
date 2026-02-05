@@ -76,7 +76,7 @@ The following table summarizes the performance at **Epoch 300**. (↑) indicates
 
 #### Training Convergence
 
-To demonstrate the stability of our reproduction, we provide the metric trends recorded during the training process for both PyTorch and Jittor versions.
+To demonstrate the stability of our reproduction, I provide the metric trends recorded during the training process for both PyTorch and Jittor versions.
 
 <p align="center">   <img src="./assets/pytorch_metrics.png" width="80%" />   <br><em>Metrics Trend: PyTorch Version</em> </p>
 
@@ -152,7 +152,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 #### Pytorch Version
 
 - **Backbone Library**: The `timm` (PyTorch Image Models) library is required to initialize the ResNet backbones. The implementation supports loading both local weights and official pre-trained models.
-- **Hungarian Matcher**: Similar to the original DETR architecture, we utilize `scipy.optimize.linear_sum_assignment` in `RecLoss.py` to solve the bipartite matching problem between predicted and ground-truth boxes.
+- **Hungarian Matcher**: Similar to the original DETR architecture, I utilize `scipy.optimize.linear_sum_assignment` in `RecLoss.py` to solve the bipartite matching problem between predicted and ground-truth boxes.
 - **Geometric Operations**: Advanced bounding box operations (such as `box_area`) are handled via `torchvision.ops` to ensure computational efficiency and gradient stability.
 - **Visualization & Evaluation**:
   - `matplotlib` is used for real-time training progress visualization.
@@ -206,7 +206,7 @@ If you have any questions or suggestions regarding this reproduction and impleme
 
 本项目是对论文 **"PosterLayout: A New Benchmark and Approach for Content-aware Automatic Poster Layout"** 的复现实现。
 
-本仓库是**南开大学**《人工智能实践课（初级）》课程的大作业成果，属于南开大学**“新芽计划”**。主要工作包括：
+本仓库是**南开大学**《人工智能实践课（初级）》课程的大作业成果，属于南开大学“**新芽计划**”。主要工作包括：
 1. 使用 **PyTorch** 对原论文进行了基准复现。
 2. 将模型完整迁移至国产高性能深度学习框架 **Jittor (计图)**。
 
@@ -258,7 +258,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
 
 #### 训练收敛趋势
 
-为了展示复现的稳定性，我们记录并提供了 PyTorch 和 Jittor 版本在训练过程中的指标变化曲线。
+为了展示复现的稳定性，我记录并提供了 PyTorch 和 Jittor 版本在训练过程中的指标变化曲线。
 
 <p align="center">   <img src="./assets/pytorch_metrics.png" width="80%" />   <br><em>Metrics Trend: PyTorch Version</em> </p>
 
@@ -334,7 +334,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 #### Pytorch 版本
 
 - **骨干网络库**：本项目使用 `timm` (PyTorch Image Models) 库来初始化 ResNet 骨干网络。代码支持从本地路径加载权重，也支持在线下载官方预训练模型。
-- **匈牙利匹配**：参考 DETR 架构，我们在 `RecLoss.py` 中调用了 `scipy.optimize.linear_sum_assignment` 来求解预测框与真实框之间的二分图匹配问题。
+- **匈牙利匹配**：参考 DETR 架构，我在 `RecLoss.py` 中调用了 `scipy.optimize.linear_sum_assignment` 来求解预测框与真实框之间的二分图匹配问题。
 - **几何算子**：复杂的边界框计算（如 `box_area`）通过 `torchvision.ops` 实现，以确保计算效率和梯度的稳定性。
 - **可视化与评估**：
   - 使用 `matplotlib` 在训练过程中生成实时的布局效果图和指标曲线。
@@ -374,6 +374,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2023}
 }
+```
 
 ### 🤝 致谢
 
@@ -381,4 +382,5 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 - 感谢南开大学人工智能学院《人工智能实践课》教学团队在复现过程中的悉心指导。
 - 感谢 **Jittor (计图)** 团队提供了优秀的国产深度学习框架支持。
 
-```
+
+
