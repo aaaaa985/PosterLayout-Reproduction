@@ -20,7 +20,7 @@
 
 ## English
 
-### 🚀Introduction
+### 🚀 Introduction
 
 This repository contains the reproduction and framework migration of the paper **"PosterLayout: A New Benchmark and Approach for Content-aware Automatic Poster Layout"**. 
 
@@ -28,7 +28,7 @@ This project is the final result of the **"AI Practice Course (Elementary)"** at
 1. A complete reproduction of the original model using **PyTorch**.
 2. A successful migration to the **Jittor (计图)** framework, a high-performance deep learning framework developed by Tsinghua University.
 
-### 🏗️Model Overview (PosterLayout / DS-GAN)
+### 🏗️ Model Overview (PosterLayout / DS-GAN)
 
 The PosterLayout model, also known as **DS-GAN** (Design Sequence GAN), is a content-aware poster layout generation framework. 
 - **Generator**: Takes a background image and a saliency map as input. A visual backbone extracts contextual features ($h_0$), while a 1D-CNN and a BiLSTM reason over the design sequence to predict element categories ($c_i$) and bounding boxes ($b_i$).
@@ -41,7 +41,7 @@ The PosterLayout model, also known as **DS-GAN** (Design Sequence GAN), is a con
   <em>Figure: Overview of the DS-GAN architecture.</em>
 </p>
 
-### 💡Migration Highlights (Technical Details)
+### 💡 Migration Highlights (Technical Details)
 
 During the migration from PyTorch to Jittor, the following optimizations were implemented based on framework characteristics:
 
@@ -50,7 +50,7 @@ During the migration from PyTorch to Jittor, the following optimizations were im
 - **Memory Synchronization**: Utilized jt.sync in the discriminator logic to precisely control synchronization, solving data consistency issues with the ArgMax operator in GPU environments.
 - **Cross-Framework Alignment**: Designed loss mapping to ensure the Jittor version achieves parity with the PyTorch version in convergence speed and evaluation metrics.
 
-### 🎨Results Showcase
+### 🎨 Results Showcase
 
 I provide a comprehensive evaluation of the model performance, including visual samples, quantitative metrics (Triple-line Table format), and training convergence plots for both frameworks. The model demonstrates a strong ability to generate content-aware layouts that respect the visual hierarchy and saliency of the background images.
 
@@ -82,7 +82,7 @@ To demonstrate the stability of our reproduction, we provide the metric trends r
 
 <p align="center">   <img src="./assets/jittor_metrics.png" width="80%" />   <br><em>Metrics Trend: Jittor Version</em> </p>
 
-### 🔍Result Analysis
+### 🔍 Result Analysis
 
 - **Framework Consistency**: Both frameworks achieved a **Validity of 1.0**, indicating that the generated layouts are fully compliant with basic geometric constraints.
 - **Metric Highlights**:
@@ -91,7 +91,7 @@ To demonstrate the stability of our reproduction, we provide the metric trends r
 
 - **Convergence**: As shown in the trend plots, both implementations show stable convergence across all 300 epochs, validating the effectiveness of our hyperparameters and migration logic.
 
-### 📖Usage
+### 📖 Usage
 
 1. **Data Preparation**: Follow the instructions in [data/README.md](https://www.google.com/url?sa=E&q=./data/README.md) to download the **PosterLLaVa** dataset. Ensure the images and JSON files are placed in the `data/` directory.
 
@@ -107,7 +107,7 @@ To demonstrate the stability of our reproduction, we provide the metric trends r
    python eval.py     # For metrics calculation and visualization
    ```
 
-### 🛠️Installation & Setup
+### 🛠️ Installation & Setup
 
 #### Pytorch Version
 
@@ -147,7 +147,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
    export MKL_SERVICE_FORCE_INTEL=1
    ```
 
-### 📓Technical Notes
+### 📓 Technical Notes
 
 #### Pytorch Version
 
@@ -164,7 +164,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 - **OpenCV-Python-Headless**: Chosen to avoid `libGL.so` missing errors during `eval.py` debugging. For headless servers, this is best practice as it avoids installing large GUI system libraries.
 - **Torch Usage**: Note that `torch` is **only** used in `convert_weight.py` to read the original `.pth` weights. The training and inference processes are 100% independent of PyTorch.
 
-### 📂Repository Structure
+### 📂 Repository Structure
 
 ```
 .
@@ -175,13 +175,15 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 └── assets/             # Images for README and documentation
 ```
 
-### 🤝Acknowledgements
+### 📧 Contact
 
-- This project belongs to the **"Sprout Program" (新芽计划)** of Nankai University.
-- Special thanks to the teaching team of the **"AI Practice Course"** at the College of Artificial Intelligence, Nankai University, for their guidance.
-- Thanks to the **Jittor** team for providing an excellent domestic deep learning framework.
+If you have any questions or suggestions regarding this reproduction and implementation, please feel free to contact:
 
-### 📜Citations
+- **Guo Junhe (国峻赫)**
+- College of Computer Science, Nankai Univ.
+- Email: [2412082@mail.nankai.edu.cn](mailto:2412082@mail.nankai.edu.cn)
+
+### 📜 Citations
 
 ```
 @inproceedings{hsu2023posterlayout,
@@ -192,9 +194,15 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 }
 ```
 
+### 🤝 Acknowledgements
+
+- This project belongs to the **"Sprout Program" (新芽计划)** of Nankai University.
+- Special thanks to the teaching team of the **"AI Practice Course"** at the College of Artificial Intelligence, Nankai University, for their guidance.
+- Thanks to the **Jittor** team for providing an excellent domestic deep learning framework.
+
 ## 中文说明
 
-### 🚀项目简介
+### 🚀 项目简介
 
 本项目是对论文 **"PosterLayout: A New Benchmark and Approach for Content-aware Automatic Poster Layout"** 的复现实现。
 
@@ -202,7 +210,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 1. 使用 **PyTorch** 对原论文进行了基准复现。
 2. 将模型完整迁移至国产高性能深度学习框架 **Jittor (计图)**。
 
-### 🏗️模型简介 (PosterLayout / DS-GAN)
+### 🏗️ 模型简介 (PosterLayout / DS-GAN)
 
 PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络），它是一种感知内容的自动海报布局生成框架：
 - **生成器 (Generator)**：输入背景图与显著图。通过视觉骨干网络提取图像特征 ($h_0$)，结合 1D-CNN 和双向 LSTM (BiLSTM) 对设计序列进行建模，最终预测每个元素的类别 ($c_i$) 和坐标 ($b_i$)。
@@ -215,7 +223,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
   <em>图：DS-GAN 架构概览</em>
 </p>
 
-### 💡迁移亮点与技术细节 (Migration Highlights)
+### 💡 迁移亮点与技术细节 (Migration Highlights)
 
 从 PyTorch 迁移至 Jittor 的过程中，针对框架特性进行了以下优化：
 
@@ -224,7 +232,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
 - **显存同步优化**：在 GAN 的判别器逻辑中，利用 `jt.sync` 精准控制同步时机，解决了 ArgMax 算子在 GPU 环境下的数据一致性问题。
 - **跨框架对齐**：通过精心设计的 Loss 映射，确保了 Jittor 版本在收敛速度和评价指标上与 PyTorch 版本保持一致。
 
-### 🎨成果展示
+### 🎨 成果展示
 
 我对模型性能进行了全面评估，包括视觉示例、定量指标对比（三线表格式）以及两个框架的训练收敛曲线。模型展现出了优秀的视觉内容感知能力，能够生成符合视觉层级并避开背景显著区域的布局。
 
@@ -256,7 +264,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
 
 <p align="center">   <img src="./assets/jittor_metrics.png" width="80%" />   <br><em>Metrics Trend: Jittor Version</em> </p>
 
-### 🔍结果分析
+### 🔍 结果分析
 
 - **框架一致性**：两个框架均达到了 **1.0 的 Validity（有效性）**，说明生成的布局完全符合基础几何规范。
 - **指标亮点**：
@@ -265,7 +273,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
 
 - **收敛性**：如趋势图所示，两个版本在 300 轮训练中各项指标均呈现稳定的收敛趋势，验证了实验参数设置与迁移逻辑的有效性。
 
-### 📖使用说明 (中文)
+### 📖 使用说明 (中文)
 
 1. **数据准备**: 请参考 [data/README.md](https://www.google.com/url?sa=E&q=./data/README.md) 下载 **PosterLLaVa** 数据集，并确保图像文件夹与 JSON 标注文件正确放置在 `data/` 目录下。
 
@@ -281,7 +289,7 @@ PosterLayout 的核心模型为 **DS-GAN**（设计序列生成对抗网络）�
    python eval.py     # 计算评价指标并进行可视化保存
    ```
 
-### 🛠️安装与环境配置
+### 🛠️ 安装与环境配置
 
 #### Pytorch 版本
 
@@ -321,7 +329,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
    export MKL_SERVICE_FORCE_INTEL=1
    ```
 
-### 📓技术说明
+### 📓 技术说明
 
 #### Pytorch 版本
 
@@ -338,7 +346,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 - **OpenCV-Python-Headless**：我在调试 `eval.py` 时发现 `import cv2` 会报 `libGL.so` 缺失。对于没有显示器的服务器，安装 Headless 版本是最佳实践，能省去安装几百 MB 系统图形库的麻烦。
 - **PyTorch 的角色**：明确说明 `torch` **仅**在 `convert_weight.py` 脚本中用于读取原始 `.pth` 权重，训练和推理过程完全不依赖 PyTorch。
 
-###  📂仓库结构
+###  📂 仓库结构
 
 ```text
 .
@@ -349,13 +357,15 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 └── assets/             # Images for README and documentation
 ```
 
-### 🤝致谢
+### 📧 联系方式
 
-- 本项目属于南开大学**“新芽计划”**项目成果。
-- 感谢南开大学人工智能学院《人工智能实践课》教学团队在复现过程中的悉心指导。
-- 感谢 **Jittor (计图)** 团队提供了优秀的国产深度学习框架支持。
+如果您对本项目有任何疑问或建议，欢迎通过以下方式联系作者：
 
-### 📜引用
+- **国峻赫**
+- 南开大学计算机学院
+- 电子邮箱：[2412082@mail.nankai.edu.cn](mailto:2412082@mail.nankai.edu.cn)
+
+### 📜 引用
 
 ```
 @inproceedings{hsu2023posterlayout,
@@ -365,6 +375,10 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
   year={2023}
 }
 
+### 🤝 致谢
+
+- 本项目属于南开大学**“新芽计划”**项目成果。
+- 感谢南开大学人工智能学院《人工智能实践课》教学团队在复现过程中的悉心指导。
+- 感谢 **Jittor (计图)** 团队提供了优秀的国产深度学习框架支持。
+
 ```
-
-
